@@ -1,23 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import React, { useState } from "react";
+import Dashboard from "./components/Dashboard";
+import Header from "./components/Header";
+import Sidebar from "./components/Sidebar";
 
 function App() {
+  const [isPending, setIsPending] = useState(true);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleDash = (value) => {
+    if (value === 1) {
+      setIsPending(true);
+    } else if (value === 2) {
+      setIsPending(false);
+    }
+  };
+
+  const handleSetModal = (state) => setIsModalOpen(state);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Sidebar />
+      <div className="content">
+        <Header
+          isPending={isPending}
+          handleDash={handleDash}
+          setModalOpen={handleSetModal}
+        />
+        <Dashboard
+          setModalClose={handleSetModal}
+          isPending={isPending}
+          isModalOpen={isModalOpen}
+        />
+      </div>
     </div>
   );
 }
