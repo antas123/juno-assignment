@@ -43,6 +43,7 @@ const Searchbar = ({
           color: "grey",
           fontWeight: "600",
           border: "none",
+          cursor:"pointer"
         }}
       >
         Trigger reasons{"  "}
@@ -64,6 +65,7 @@ const Searchbar = ({
           color: "grey",
           fontWeight: "600",
           border: "none",
+          cursor:"pointer"
         }}
       >
         Risk level{"  "}

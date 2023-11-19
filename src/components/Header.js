@@ -56,12 +56,13 @@ const Header = ({ isPending, handleDash, setModalOpen }) => {
               color: "#D13B3B",
               fontWeight: "500",
               border: "none",
+              cursor:"pointer"
             }}
             onClick={() => setModalOpen(true)}
           >
             <FontAwesomeIcon
               icon={faCircleXmark}
-              style={{ color: "#ff0000", marginRight: "4px" }}
+              style={{ color: "#ff0000", marginRight: "4px", }}
             />
             Close account
           </button>
